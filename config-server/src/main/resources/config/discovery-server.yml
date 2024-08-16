@@ -4,14 +4,16 @@ spring:
   boot:
     admin:
       context-path: /admin
+
 server:
   port: 8090
+
 eureka:
   instance:
     hostname: discoveryserver
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
