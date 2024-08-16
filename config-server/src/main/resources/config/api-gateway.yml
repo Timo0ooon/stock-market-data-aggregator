@@ -1,26 +1,15 @@
-server:
-  port: 8089
-
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://discoveryserver:8090/eureka/
-
 spring:
   cloud:
-    loadbalancer.ribbon.enabled: false
     gateway:
       routes:
-
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
+        customer-server-url: lb://customer-service
+        discovery-server-url: http://localhost:8761
+logging:
+  level:
+    root: info
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: info
+    org.springframework.cloud.gateway: trace
+    org.springframework.security: DEBUG
+server:
+  port: 8762
+  forward-headers-strategy: framework
