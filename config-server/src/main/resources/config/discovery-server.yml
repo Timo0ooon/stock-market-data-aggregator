@@ -1,8 +1,26 @@
+spring:
+  application:
+    name: discovery-server
+  boot:
+    admin:
+      context-path: /admin
+server:
+  port: 8090
 eureka:
   instance:
-    hostname: localhost
+    hostname: discoveryserver
   client:
-    register-with-eureka: false
-    fetch-registry: false
-server:
-  port: 8761
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

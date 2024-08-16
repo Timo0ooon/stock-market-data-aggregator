@@ -1,0 +1,27 @@
+server:
+  port: 8089
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discoveryserver:8090/eureka/
+
+
+spring:
+  cloud:
+    loadbalancer.ribbon.enabled: false
+    gateway:
+      routes:
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
