@@ -9,6 +9,7 @@ spring:
       server:
         native:
           search-locations: classpath:/config
+       # bootstrap: true
 
 server:
   port: 8088
