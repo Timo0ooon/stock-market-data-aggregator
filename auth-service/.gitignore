@@ -14,9 +14,9 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.mvn/
+.mvn/wrapper/
 /HELP.md
-/mvnw
+mvnw
 /mvnw.cmd
 /.env
 .idea
